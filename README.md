@@ -1,8 +1,12 @@
 # AWS Lift and Shift Project
 
+## Hands-On Video Demonstration
+
+[Youtube]
+
 ## Overview
 
-This project involves migrating an existing application infrastructure to Amazon Web Services (AWS) using the Lift and Shift approach. The application consists of various components including Tomcat Server, MySQL, RabbitMQ, and Memcache. The goal is to replicate the existing setup on AWS while utilizing AWS services effectively.
+This project involves migrating an existing application infrastructure to Amazon Web Services (AWS) using the Lift and Shift approach. The application consists of various components including Tomcat Server, MySQL, RabbitMQ, Memcache, S3 bucket and role and policy attachment. The goal is to replicate the existing setup on AWS while utilizing AWS services effectively.
 
 ## Components
 
@@ -29,7 +33,7 @@ A public domain will be registered to create a proper hostname for the load bala
 
 1. **EC2 Instance Setup**: Provision EC2 instances for Tomcat Server, MySQL, RabbitMQ, Memcache, and the JDK 11/Maven Build server.
    
-2. **Software Installation**: Install the required software components on each EC2 instance. This includes Tomcat Server, MySQL, RabbitMQ, Memcache, JDK 11, and Maven.
+2. **Security Configuration**: Configure security groups to restrict access to the EC2 instances and other resources as per security requirements.
 
 3. **Java Source Code Deployment**: Configure the JDK 11/Maven Build server to build the Java source code into an artifact. Store the artifact inside an S3 Bucket.
 
@@ -37,7 +41,7 @@ A public domain will be registered to create a proper hostname for the load bala
 
 5. **Public Domain Registration**: Register a public domain and configure it to point to the load balancer endpoint.
 
-6. **Security Configuration**: Configure security groups to restrict access to the EC2 instances and other resources as per security requirements.
+6. **Software Installation**: Install the required software components on each EC2 instance. This includes Tomcat Server, MySQL, RabbitMQ, Memcache, JDK 11, and Maven.
 
 7. **Testing and Optimization**: Test the application to ensure everything is functioning as expected. Optimize the infrastructure for performance and cost-efficiency if needed.
 
@@ -45,7 +49,7 @@ A public domain will be registered to create a proper hostname for the load bala
 Here,we used Mysql DB 
 sql dump file:
 - /src/main/resources/db_backup.sql
-- db_backup.sql file is a mysql dump file.we have to import this dump to mysql db server
+- db_backup.sql file is a mysql dump file. we have to import this dump to mysql db server
 - > mysql -u <user_name> -p accounts < db_backup.sql
 
 ## Conclusion

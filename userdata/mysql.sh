@@ -10,7 +10,7 @@ sudo yum install mariadb-server -y
 sudo systemctl start mariadb
 sudo systemctl enable mariadb
 cd /tmp/
-git clone -b LiftAndShift https://github.com/devara007/liftandshift.git
+git clone -b LiftAndShift https://github.com/DevAra007/p2_aws_liftandshift.git
 
 #restore the dump file for the application
 sudo mysqladmin -u root password "$DATABASE_PASS"
