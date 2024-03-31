@@ -10,7 +10,7 @@ sudo yum install mariadb-server -y
 sudo systemctl start mariadb
 sudo systemctl enable mariadb
 cd /tmp/
-git clone -b LiftAndShift https://github.com/DevAra007/p2_aws_liftandshift.git
+git clone -b LiftAndShift https://github.com/seunayolu/devopsproject.git
 
 #restore the dump file for the application
 sudo mysqladmin -u root password "$DATABASE_PASS"
@@ -22,7 +22,7 @@ sudo mysql -u root -p"$DATABASE_PASS" -e "FLUSH PRIVILEGES"
 sudo mysql -u root -p"$DATABASE_PASS" -e "create database accounts"
 sudo mysql -u root -p"$DATABASE_PASS" -e "grant all privileges on accounts.* TO 'admin'@'localhost' identified by 'admin123'"
 sudo mysql -u root -p"$DATABASE_PASS" -e "grant all privileges on accounts.* TO 'admin'@'%' identified by 'admin123'"
-sudo mysql -u root -p"$DATABASE_PASS" accounts < /tmp/p2_aws_liftandshift/src/main/resources/db_backup.sql
+sudo mysql -u root -p"$DATABASE_PASS" accounts < /tmp/devopsproject/src/main/resources/db_backup.sql
 sudo mysql -u root -p"$DATABASE_PASS" -e "FLUSH PRIVILEGES"
 
 # Restart mariadb-server
